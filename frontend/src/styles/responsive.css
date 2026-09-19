@@ -1,0 +1,29 @@
+/* Breakpoints: 1200px / 992px / 768px / 576px */
+ 
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 var(--space-md);
+  }
+}
+ 
+@media (max-width: 992px) {
+  .section-title {
+    font-size: 1.7rem;
+  }
+}
+ 
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-xl) 0;
+  }
+}
+ 
+@media (max-width: 576px) {
+  .btn {
+    width: 100%;
+  }
+  .section-title {
+    font-size: 1.4rem;
+  }
+}
+ 

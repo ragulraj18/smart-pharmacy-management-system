@@ -1,0 +1,93 @@
+.medid-page {
+  padding: var(--space-xl) 0 var(--space-2xl);
+  max-width: 560px;
+}
+ 
+.medid-upload {
+  border: 2px dashed var(--border);
+  padding: var(--space-2xl);
+  text-align: center;
+  color: var(--muted);
+  cursor: pointer;
+  margin: var(--space-lg) 0;
+}
+ 
+.medid-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  margin-top: 8px;
+}
+ 
+.medid-preview {
+  position: relative;
+  display: inline-block;
+}
+ 
+.medid-preview img {
+  max-height: 220px;
+  border-radius: var(--radius-md);
+}
+ 
+.medid-remove {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: var(--danger);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+ 
+.medid-analyze {
+  width: 100%;
+}
+ 
+.medid-result {
+  padding: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+ 
+.medid-result-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+ 
+.medid-result p {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin: 2px 0;
+}
+ 
+.medid-disclaimer {
+  margin-top: var(--space-md);
+  font-size: 0.78rem;
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-md);
+}
+ 
+.medid-actions {
+  margin: var(--space-md) 0;
+}
+ 
+.medid-no-match {
+  color: var(--muted);
+}
+ 
+.medid-no-match h3 {
+  color: var(--text);
+  margin-bottom: 6px;
+}
+ 
+.medid-raw-text {
+  font-style: italic;
+  margin-top: 8px;
+  font-size: 0.82rem;
+}
+ 

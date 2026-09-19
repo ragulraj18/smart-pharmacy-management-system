@@ -1,0 +1,72 @@
+:root {
+  /* ===== Brand colors ===== */
+  --primary: #0F766E;          /* deep teal — core brand color */
+  --primary-dark: #0B5450;
+  --primary-light: #14B8A6;
+  --secondary: #4F46E5;        /* indigo — secondary brand accent, used for CTAs/highlights */
+  --secondary-dark: #4338CA;
+  --secondary-light: #818CF8;
+  --accent: #2563EB;           /* blue — links, informational accents */
+ 
+  /* Extra palette used for category icons / stat-card variety so the UI
+     doesn't read as "everything is teal" */
+  --pop-1: #0F766E; /* teal */
+  --pop-2: #4F46E5; /* indigo */
+  --pop-3: #DB2777; /* pink */
+  --pop-4: #D97706; /* amber */
+  --pop-5: #0891B2; /* cyan */
+  --pop-6: #7C3AED; /* violet */
+ 
+  /* ===== Neutrals ===== */
+  --background: #F8FAFC;
+  --surface: #FFFFFF;
+  --surface-alt: #F1F5F9;
+  --text: #0F172A;
+  --muted: #64748B;
+  --border: #E2E8F0;
+ 
+  /* ===== Status colors ===== */
+  --success: #16A34A;
+  --warning: #D97706;
+  --danger: #DC2626;
+  --info: #0284C7;
+ 
+  /* ===== Dark surfaces (footer, staff navbars, hero overlays) ===== */
+  --dark-surface: #0B1226;
+  --dark-surface-alt: #131B34;
+ 
+  /* ===== Radius ===== */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-full: 999px;
+ 
+  /* ===== Shadows ===== */
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 10px 28px rgba(15, 23, 42, 0.12);
+  --shadow-lg: 0 24px 56px rgba(15, 23, 42, 0.18);
+  --shadow-primary: 0 10px 24px rgba(79, 70, 229, 0.28);
+  --shadow-secondary: 0 10px 24px rgba(219, 39, 119, 0.25);
+ 
+  /* ===== Gradients =====
+     Primary CTA gradient is now a teal->indigo blend — this is the fix for
+     "everything looks green": buttons/hero/badges read as a distinctive
+     two-tone brand color, not flat green. */
+  --gradient-primary: linear-gradient(135deg, #0F766E 0%, #4F46E5 100%);
+  --gradient-secondary: linear-gradient(135deg, #DB2777 0%, #7C3AED 100%);
+  --gradient-hero: linear-gradient(120deg, #ECFEFF 0%, #EEF2FF 45%, #FDF2F8 100%);
+  --gradient-dark: linear-gradient(135deg, #0B1226 0%, #1E1B4B 100%);
+ 
+  /* ===== Spacing scale ===== */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 64px;
+ 
+  /* ===== Typography ===== */
+  --font-main: 'Poppins', 'Segoe UI', -apple-system, sans-serif;
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+ 

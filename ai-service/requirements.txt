@@ -1,0 +1,10 @@
+fastapi==0.111.0
+uvicorn==0.30.1
+python-multipart==0.0.9
+pandas==2.2.2
+numpy==1.26.4
+scikit-learn==1.5.0
+opencv-python==4.10.0.84
+pillow==10.3.0
+joblib==1.4.2
+pytesseract==0.3.10

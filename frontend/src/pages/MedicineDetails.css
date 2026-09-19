@@ -1,0 +1,85 @@
+.details-page {
+  padding: var(--space-xl) 0 var(--space-2xl);
+}
+ 
+.details-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: var(--space-2xl);
+}
+ 
+.details-image {
+  overflow: hidden;
+  height: fit-content;
+}
+ 
+.details-image img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+ 
+.details-info h1 {
+  font-size: 1.8rem;
+  margin: 8px 0 4px;
+}
+ 
+.details-generic {
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+ 
+.details-brand {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: var(--space-md);
+}
+ 
+.details-price-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+ 
+.details-price {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+ 
+.details-actions {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-xl);
+}
+ 
+.details-section {
+  margin-bottom: var(--space-lg);
+}
+ 
+.details-section h3 {
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+ 
+.details-section p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+ 
+.details-disclaimer {
+  font-size: 0.78rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-md);
+}
+ 
+@media (max-width: 768px) {
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+ 

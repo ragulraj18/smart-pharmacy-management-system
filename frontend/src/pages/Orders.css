@@ -1,0 +1,42 @@
+.orders-page {
+  padding: var(--space-xl) 0 var(--space-2xl);
+}
+ 
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+ 
+.order-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+}
+ 
+.order-row h4 {
+  font-size: 0.95rem;
+}
+ 
+.order-row-date {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+ 
+.order-row-items {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+ 
+.order-row-total {
+  font-weight: 700;
+  color: var(--primary);
+}
+ 
+@media (max-width: 576px) {
+  .order-row {
+    flex-wrap: wrap;
+  }
+}

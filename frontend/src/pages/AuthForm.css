@@ -1,0 +1,83 @@
+.auth-page {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xl) var(--space-md);
+  /* No background here on purpose — the page shows the site-wide colored
+     gradient mesh from body (see global.css) instead of a flat gray box. */
+}
+ 
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  padding: var(--space-xl);
+}
+ 
+.auth-card h2 {
+  margin-bottom: 6px;
+}
+ 
+.auth-subtitle {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-lg);
+}
+ 
+.auth-error {
+  background: rgba(220,38,38,0.08);
+  color: var(--danger);
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  margin-bottom: var(--space-md);
+}
+ 
+.auth-success {
+  background: rgba(22,163,74,0.08);
+  color: var(--success);
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+ 
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+ 
+.auth-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+}
+ 
+.auth-form input {
+  font-weight: 400;
+}
+ 
+.auth-submit {
+  width: 100%;
+  margin-top: var(--space-sm);
+}
+ 
+.auth-switch {
+  margin-top: var(--space-lg);
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+ 
+.auth-switch a {
+  color: var(--primary);
+  font-weight: 600;
+}
+ 

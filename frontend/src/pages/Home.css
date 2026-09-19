@@ -1,0 +1,361 @@
+/* HERO */
+.hero {
+  background: var(--gradient-hero);
+  padding: var(--space-2xl) 0;
+  position: relative;
+  overflow: hidden;
+}
+ 
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xl);
+  position: relative;
+  z-index: 1;
+}
+ 
+.hero-content {
+  max-width: 560px;
+}
+ 
+.hero-tag {
+  margin-bottom: var(--space-md);
+}
+ 
+.hero-title {
+  font-size: 2.6rem;
+  margin-bottom: var(--space-md);
+}
+ 
+.hero-title span {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+ 
+.hero-subtitle {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-bottom: var(--space-lg);
+}
+ 
+.hero-actions {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+ 
+.hero-image {
+  flex-shrink: 0;
+}
+ 
+.hero-image-circle {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  animation: float 4s ease-in-out infinite;
+}
+ 
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+ 
+/* SEARCH */
+.search-section {
+  margin-top: -28px;
+  position: relative;
+  z-index: 2;
+}
+ 
+.search-box {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  padding: 8px 8px 8px 20px;
+  gap: 10px;
+  transition: var(--transition);
+}
+ 
+.search-box:focus-within {
+  box-shadow: var(--shadow-lg);
+}
+ 
+.search-icon {
+  color: var(--muted);
+  flex-shrink: 0;
+}
+ 
+.search-box input {
+  border: none;
+  padding: 10px 0;
+}
+ 
+.search-box input:focus {
+  box-shadow: none;
+}
+ 
+.search-btn {
+  flex-shrink: 0;
+}
+ 
+/* CATEGORIES */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--space-md);
+}
+ 
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: var(--space-lg) var(--space-sm);
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+}
+ 
+.category-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+ 
+.category-card:hover .category-icon {
+  transform: scale(1.1) rotate(-4deg);
+}
+ 
+/* Color-coded icon backgrounds — pulls from the pop-* palette so each
+   category/feature looks visually distinct instead of uniform teal. */
+.icon-pop-1 { background: rgba(15,118,110,0.12); color: var(--pop-1); }
+.icon-pop-2 { background: rgba(79,70,229,0.12); color: var(--pop-2); }
+.icon-pop-3 { background: rgba(219,39,119,0.12); color: var(--pop-3); }
+.icon-pop-4 { background: rgba(217,119,6,0.12); color: var(--pop-4); }
+.icon-pop-5 { background: rgba(8,145,178,0.12); color: var(--pop-5); }
+.icon-pop-6 { background: rgba(124,58,237,0.12); color: var(--pop-6); }
+ 
+/* POPULAR MEDICINES */
+.section-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+}
+ 
+.section-header-row .section-subtitle {
+  margin-bottom: 0;
+}
+ 
+.medicines-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+ 
+/* AI SECTION */
+.ai-section {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  margin: var(--space-2xl) auto;
+  max-width: 1240px;
+  box-shadow: var(--shadow-sm);
+}
+ 
+.ai-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xl);
+}
+ 
+.ai-content {
+  max-width: 480px;
+}
+ 
+.ai-content .badge {
+  margin-bottom: var(--space-sm);
+}
+ 
+.ai-preview {
+  width: 340px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+ 
+.ai-preview-header {
+  background: var(--gradient-primary);
+  color: #fff;
+  padding: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+ 
+.ai-online {
+  margin-left: auto;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #D1FAE5;
+}
+ 
+.ai-preview-body {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--background);
+}
+ 
+.chat-bubble {
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  max-width: 85%;
+  line-height: 1.5;
+}
+ 
+.chat-bubble.user {
+  align-self: flex-end;
+  background: var(--gradient-primary);
+  color: #fff;
+  border-bottom-right-radius: 2px;
+}
+ 
+.chat-bubble.bot {
+  align-self: flex-start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-bottom-left-radius: 2px;
+}
+ 
+/* PRESCRIPTION UPLOAD */
+.rx-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-xl);
+}
+ 
+.rx-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-md);
+  background: rgba(79, 70, 229, 0.12);
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+ 
+.rx-text {
+  flex: 1;
+}
+ 
+.rx-text p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+ 
+/* WHY CHOOSE US */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+ 
+.why-card {
+  padding: var(--space-lg);
+}
+ 
+.why-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-md);
+}
+ 
+.why-card h4 {
+  margin-bottom: 6px;
+  font-size: 1rem;
+}
+ 
+.why-card p {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+ 
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-content {
+    max-width: 100%;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+  .categories-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .medicines-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ai-inner {
+    flex-direction: column;
+  }
+  .ai-preview {
+    width: 100%;
+  }
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .rx-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+ 
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 1.9rem;
+  }
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .medicines-grid {
+    grid-template-columns: 1fr;
+  }
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-image-circle {
+    width: 160px;
+    height: 160px;
+  }
+}
+ 
