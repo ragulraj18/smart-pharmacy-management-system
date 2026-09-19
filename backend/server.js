@@ -11,10 +11,11 @@ const connectDB = require('./config/db');
 require('./models/Category');
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 
-// Warn loudly (but don't crash) if critical secrets are missing or left
-// at an obviously unsafe default — easy to miss otherwise.
+// Warn loudly if critical secrets are missing or unsafe
 if (!process.env.JWT_SECRET || process.env.JWT_SECRET.length < 20) {
-  console.warn('⚠️  WARNING: JWT_SECRET is missing or too short. Set a long random value in backend/.env.');
+  console.warn(
+    '⚠️ WARNING: JWT_SECRET is missing or too short. Set a long random value in backend/.env.'
+  );
 }
 
 connectDB();
@@ -22,9 +23,26 @@ connectDB();
 const app = express();
 const server = http.createServer(app);
 
+// ======================================================
+// ALLOWED FRONTEND ORIGINS
+// ======================================================
+
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://smart-pharmacy-management-system.vercel.app',
+];
+
+// ======================================================
+// SOCKET.IO
+// ======================================================
+
 const io = new Server(server, {
-  cors: { origin: 'http://localhost:5173', credentials: true },
+  cors: {
+    origin: allowedOrigins,
+    credentials: true,
+  },
 });
+
 app.set('io', io);
 
 io.on('connection', (socket) => {
@@ -39,20 +57,39 @@ io.on('connection', (socket) => {
   });
 });
 
-// Security headers (sets sensible defaults: no-sniff, hides X-Powered-By,
-// disables outdated XSS-filter header, etc.) — safe to enable everywhere.
+// ======================================================
+// SECURITY HEADERS
+// ======================================================
+
 app.use(helmet());
+
+// ======================================================
+// EXPRESS CORS
+// ======================================================
 
 app.use(
   cors({
-    origin: 'http://localhost:5173',
+    origin: allowedOrigins,
     credentials: true,
   })
 );
 
-app.use(express.json({ limit: '2mb' })); // caps request body size — prevents oversized payload abuse
+// ======================================================
+// BODY PARSERS
+// ======================================================
+
+app.use(express.json({ limit: '2mb' }));
 app.use(express.urlencoded({ extended: true }));
+
+// ======================================================
+// STATIC FILES
+// ======================================================
+
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+// ======================================================
+// BASIC ROUTES
+// ======================================================
 
 app.get('/', (req, res) => {
   res.json({
@@ -64,8 +101,15 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api/health', (req, res) => {
-  res.json({ success: true, status: 'OK' });
+  res.json({
+    success: true,
+    status: 'OK',
+  });
 });
+
+// ======================================================
+// API ROUTES
+// ======================================================
 
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/medicines', require('./routes/medicineRoutes'));
@@ -77,16 +121,24 @@ app.use('/api/admin', require('./routes/adminRoutes'));
 app.use('/api/delivery', require('./routes/deliveryRoutes'));
 app.use('/api/ai', require('./routes/aiRoutes'));
 
+// ======================================================
+// ERROR HANDLING
+// ======================================================
+
 app.use(notFound);
 app.use(errorHandler);
+
+// ======================================================
+// START SERVER
+// ======================================================
 
 const PORT = process.env.PORT || 5000;
 
 server.listen(PORT, () => {
-  console.log(`=========================================`);
-  console.log(`Smart Pharmacy Management System`);
+  console.log('=========================================');
+  console.log('Smart Pharmacy Management System');
   console.log(`Server running on http://localhost:${PORT}`);
-  console.log(`Database: smart_pharmacy_ai`);
-  console.log(`Socket.IO enabled for real-time updates`);
-  console.log(`=========================================`);
+  console.log('Database: smart_pharmacy_ai');
+  console.log('Socket.IO enabled for real-time updates');
+  console.log('=========================================');
 });
